@@ -67,7 +67,13 @@ This report compiles the key findings and insights from the analysis of the Netf
   - Recall: 0.5641
   - F1-score: 0.5449
   - AUC: 0.5168
-- Enables early detection of users likely to cancel, guiding retention efforts
+
+**Model Insights**:
+- Users with shorter durations, lower revenue, and certain device types (e.g., smartphones) had higher churn probabilities.
+- Feature importance analysis showed **subscription type**, **device**, and **monthly revenue** were strong predictors of churn.
+- This model enables proactive targeting of high-risk users with tailored retention campaigns or loyalty offers.
+
+---
 
 ### 💰 LTV Prediction – Random Forest Regressor
 
@@ -76,7 +82,11 @@ This report compiles the key findings and insights from the analysis of the Netf
   - MAE: 0.4079
   - MSE: 2.3005
   - R²: 0.9973
-- Helps prioritize high-value customers for strategic marketing
+
+**Model Insights**:
+- LTV was most influenced by **subscription type**, **duration**, and **monthly revenue**.
+- Users on Premium plans and using tablets/laptops had significantly higher predicted LTVs.
+- This model helps identify valuable user segments for upselling, targeted promotions, or content personalization.
 
 ---
 
