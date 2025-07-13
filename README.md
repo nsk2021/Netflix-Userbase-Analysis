@@ -1,83 +1,111 @@
-# 📺 Netflix Userbase Analysis Report
+# 📺 Netflix Userbase Analysis
 
 ## 📌 Overview
 
-This repository contains an in-depth analysis of a Netflix userbase dataset. The primary goal is to understand customer behavior and identify strategies to increase the customer base and revenue. The analysis includes data visualizations, LTV and engagement metrics, and predictive models for churn and LTV forecasting.
+This repository presents a detailed analysis of a Netflix userbase dataset. The primary objective is to explore user behavior, identify key revenue-driving segments, and develop data-backed strategies to improve customer retention and Lifetime Value (LTV). The project includes EDA, user profiling, LTV calculation, churn prediction, and future recommendations.
 
 ---
 
-## 📂 Dataset
+## 📊 Netflix Userbase Analysis Final Report
 
-The dataset includes detailed user information such as:
-
-- Subscription type
-- Monthly revenue
-- Join date and last payment date
-- Country, age, and gender
-- Primary streaming device
+This report compiles the key findings and insights from the analysis of the Netflix userbase dataset, along with potential strategies and next steps based on these findings and the predictive modeling conducted.
 
 ---
 
-## 📊 Analysis and Key Findings
+## 📂 Data Overview and Initial Findings
 
-### 🌍 User Distribution and Demographics
+- The dataset contains user-level data such as:
+  - Subscription type and monthly revenue
+  - Join and last payment dates
+  - Country, age, gender, and device used
+- The dataset had **no missing or duplicate rows**, ensuring clean input for analysis.
+- Calculated fields include:
+  - **Subscription duration** (in days and months)
+  - **Lifetime Value (LTV)** = Monthly Revenue × Duration
 
-- **Geographic Concentration**: Highest user counts in the **United States** and **Spain**, followed by **Canada**.
-- **Gender Balance**: Users are almost evenly split between male and female.
-- **Age Groups**: Dominant age brackets are **26–35** and **46–51**.
-- **Device Usage**: Netflix is accessed via smartphones, tablets, laptops, and smart TVs.
+---
 
-### 💳 Subscription and Engagement
+## 🌍 User Distribution and Demographics
 
-- **Plan Preferences**:
-  - **Mexico** prefers Standard plans.
-  - **Brazil, Canada, Germany, Italy** lean toward Basic plans.
+- **Geographic Concentration**: United States and Spain have the highest number of users, followed by Canada.
+- **Gender Balance**: Consistent and balanced across countries and devices.
+- **Age Concentration**: Most users are in the **26–35** and **46–51** age groups.
+- **Device Usage**: Netflix is accessed through smartphones, tablets, laptops, and smart TVs.
+
+---
+
+## 💳 Subscription Type Analysis
+
+- **Plan Preferences by Country**:
+  - **Mexico** favors Standard plans.
+  - **Brazil, Canada, Germany, Italy** lean toward Basic.
   - **US and Spain** dominate Premium subscriptions.
-- **Average User Duration**: ~**10.14 months**.
-- **Lifetime Value (LTV)**:
-  - **Total LTV** highest in **US** and **Spain**.
-  - **Average LTV** per user peaks in **France** and **UK**.
-  - **Tablets and Laptops** show slightly better revenue performance.
+- **Plan Preferences by Device**:
+  - Useful for tailoring device-specific marketing and bundle offerings.
 
 ---
 
-## 🔮 Predictive Modeling
+## ⏱️ User Engagement & Lifetime Value (LTV)
+
+- **Average Engagement Duration**: ~**10.14 months**
+- **LTV Highlights**:
+  - **Highest total LTV**: United States and Spain
+  - **Highest average LTV**: France and the UK
+  - **Devices**: Tablets and laptops yield slightly higher LTVs
+  - **Age-based LTV**: Remains relatively consistent across age groups
+
+---
+
+## 🔮 Predictive Modeling Insights
 
 ### ⚠️ Churn Prediction – Random Forest Classifier
 
-- **Definition**: Churn is based on user duration.
-- **Metrics**:
+- **Churn Definition**: Based on shortened user duration
+- **Performance**:
   - Accuracy: 0.5296
   - Precision: 0.5269
   - Recall: 0.5641
-  - F1-Score: 0.5449
+  - F1-score: 0.5449
   - AUC: 0.5168
+- Enables early detection of users likely to cancel, guiding retention efforts
 
 ### 💰 LTV Prediction – Random Forest Regressor
 
-- **Goal**: Estimate long-term user value for targeted strategies.
-- **Metrics**:
+- **Purpose**: Forecast user-level revenue potential
+- **Performance**:
   - MAE: 0.4079
   - MSE: 2.3005
   - R²: 0.9973
+- Helps prioritize high-value customers for strategic marketing
 
 ---
 
 ## 🛠 Tools & Technologies
 
-- **Python**: Data analysis and modeling
-- **Pandas**: Data manipulation
-- **Matplotlib & Seaborn**: Visualizations
-- **Scikit-learn**: Machine learning models
-- **Jupyter Notebook**: Interactive analysis
+- **Python** – Core scripting language
+- **Pandas** – Data wrangling
+- **Matplotlib & Seaborn** – Visualization
+- **Scikit-learn** – Predictive modeling
+- **Jupyter Notebook** – Exploratory analysis and documentation
 
 ---
 
 ## 🧭 Next Steps & Strategy Recommendations
 
-- **Deeper Regional Insights**: Conduct granular analysis in high-LTV regions (France, UK) to determine what drives customer value.
-- **Churn Driver Analysis**: Identify key features contributing to churn risk using model interpretability tools (e.g., SHAP).
-- **Behavioral Segmentation**: Segment users by behavior, demographics, and LTV to personalize content and offers.
-- **Retention Tactics**: Design campaigns for users predicted to churn—e.g., exclusive offers, early access to content.
-- **Upsell Opportunities**: Encourage Basic and Standard users in high-value regions to shift to Premium via tailored recommendations.
-- **Device-Specific Experience**: Enhance UX on tablets and laptops where LTV is higher to boost retention.
+### 🔍 Next Steps
+
+- **Deep Dive into High LTV Countries**: Analyze user traits in France and UK to discover drivers of high value
+- **Analyze Churn Factors**: Use model features and SHAP values to identify churn triggers
+- **Segmentation Analysis**: Group users by age, country, device, plan, churn probability, and LTV
+- **Time Series Analysis**: Explore churn, acquisition, and revenue trends over time
+- **Feature Importance Analysis**: Identify what drives churn and LTV through model interpretation
+
+### 💡 Strategies to Grow Customers & Revenue
+
+- **Targeted Marketing Campaigns**: Segment by country, device, age group, LTV, and churn risk
+- **Subscription Plan Optimization**: Tailor pricing based on country-specific preferences and value
+- **Device-Specific Strategies**: Improve UX for high-revenue devices like tablets and laptops
+- **Content Strategy**: Customize recommendations based on engagement and predicted LTV
+- **Churn Reduction Initiatives**: Run proactive engagement for high-risk users with exclusive offers
+- **Loyalty Programs**: Reward high-LTV users to boost retention and satisfaction
+- **Promotions & Partnerships**: Collaborate with device manufacturers or telecoms in high-potential regions
